@@ -3,14 +3,15 @@
     <transition name="modal-fade" appear>
       <div v-if="isModalOpen" class="fixed inset-0 z-50 flex items-center justify-end bg-black bg-opacity-50"
         @click="$emit('closeModal')">
-        <div class="bg-blue-950 sm:w-1/4 w-full sm:ml-0 ml-10 h-full" @click.stop>
+        <div class="bg-blue-950 sm:max-w-[420px] w-full sm:ml-0 ml-10 h-full" @click.stop>
           <div class="h-[50%] px-5">
             <div class="flex items-center justify-between pt-10">
               <h2 class="text-white text-3xl font-medium">{{ pokemonDeatil.name }}</h2>
-              <h2 class="text-white">#01</h2>
+              <h2 class="text-white"># <span v-if="pokemonDeatil.id <= 9">0</span><span>{{ pokemonDeatil.id }}</span></h2>
             </div>
             <div class="flex justify-start mt-5 gap-2">
-              <h2 class="bg-blue-900 text-white rounded-full px-[12px] shadow py-[2px]">{{ pokemonDeatil.firstName }}</h2>
+              <h2 class="bg-blue-900 text-white rounded-full px-[12px] shadow py-[2px]">{{ pokemonDeatil.firstName }}
+              </h2>
               <h2 class="bg-blue-900 text-white rounded-full px-[12px] shadow py-[2px]">{{ pokemonDeatil.secondName }}
               </h2>
             </div>
@@ -40,7 +41,7 @@
     </transition>
   </div>
 </template>
-  
+
 <script>
 export default {
   props: {
@@ -53,7 +54,7 @@ export default {
   methods: {},
 };
 </script>
-  
+
 <style scoped>
 .modal-fade-enter-active,
 .modal-fade-leave-active {
@@ -65,4 +66,3 @@ export default {
   opacity: 0;
 }
 </style>
-  

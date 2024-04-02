@@ -11,120 +11,140 @@ export default {
       isModalOpen: false,
       pokemon: [
         {
+          id:1,
           imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
           name: "balbusar",
           firstName: "grass",
           secondName: "poison",
         },
         {
+          id:2,
           imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
           name: "balbusar",
           firstName: "grass",
           secondName: "poison",
         },
         {
+          id:3,
           imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
           name: "balbusar",
           firstName: "grass",
           secondName: "poison",
         },
         {
+          id:4,
           imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
           name: "balbusar",
           firstName: "grass",
           secondName: "poison",
         },
         {
+          id:5,
           imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
           name: "balbusar",
           firstName: "grass",
           secondName: "poison",
         },
         {
+          id:6,
           imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
           name: "balbusar",
           firstName: "grass",
           secondName: "poison",
         },
         {
+          id:7,
           imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
           name: "balbusar",
           firstName: "grass",
           secondName: "poison",
         },
         {
+          id:8,
           imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
           name: "balbusar",
           firstName: "grass",
           secondName: "poison",
         },
         {
+          id:9,
           imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
           name: "balbusar",
           firstName: "grass",
           secondName: "poison",
         },
         {
+          id:10,
           imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
           name: "balbusar",
           firstName: "grass",
           secondName: "poison",
         },
         {
+          id:11,
           imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
           name: "balbusar",
           firstName: "grass",
           secondName: "poison",
         },
         {
+          id:12,
           imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
           name: "balbusar",
           firstName: "grass",
           secondName: "poison",
         },
         {
+          id:13,
           imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
           name: "balbusar",
           firstName: "grass",
           secondName: "poison",
         },
         {
+          id:14,
           imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
           name: "balbusar",
           firstName: "grass",
           secondName: "poison",
         },
         {
+          id:15,
           imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
           name: "balbusar",
           firstName: "grass",
           secondName: "poison",
         },
         {
+          id:16,
           imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
           name: "balbusar",
           firstName: "grass",
           secondName: "poison",
         },
         {
+          id:17,
           imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
           name: "balbusar",
           firstName: "grass",
           secondName: "poison",
         },
         {
+          id:18,
           imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
           name: "balbusar",
           firstName: "grass",
           secondName: "poison",
         },
         {
+          id:19,
           imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
           name: "balbusar",
           firstName: "grass",
           secondName: "poison",
         },
         {
+          id:20,
           imageUrl: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
           name: "balbusar",
           firstName: "grass",
@@ -145,7 +165,7 @@ export default {
 <template>
   <div>
     <div class="sm:mx-auto sm:container sm:my-24 my-5 sm:px-1 px-4">
-      <h1 class="text-3xl font-medium text-blue-950">Pokedex</h1>
+      <h1 class="text-3xl font-medium text-blue-950 text-center">Pokedex</h1>
       <div class="mt-6 grid grid-cols-2 gap-2 sm:flex-wrap sm:gap-4 sm:flex sm:justify-center">
         <div class="bg-blue-950 shadow cursor-pointer sm:w-60 w-full rounded-lg sm:pt-16 pt-10 pb-6 px-2" @click="handleIsModalOpen(item)"
           v-for="item in (index, pokemon)">
