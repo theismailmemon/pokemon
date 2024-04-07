@@ -16,7 +16,7 @@
               </h2>
             </div>
             <div class="">
-              <img :src="pokemonDeatil.imageUrl" alt="" class="w-40 mx-auto">
+              <img :src="pokemonDeatil.imageUrl" alt="" class="w-40 mx-auto mt-14">
             </div>
           </div>
           <div class="bg-white rounded-t-3xl h-[50%] px-5 pt-10">
