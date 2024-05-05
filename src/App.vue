@@ -33,7 +33,6 @@ export default {
     <Pokemon />
   </section>
 </template>
-
 <style scoped>
 /* Scoped styles to apply scrollbar to the content inside the modal */
 .custom-scrollbar {
@@ -41,19 +40,20 @@ export default {
 }
 
 .custom-scrollbar::-webkit-scrollbar {
-    width: 10px;
+    width: 7px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #f3f4f6;
+ 
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #3b82f6;
+    background: #9ca3af;
     border-radius: 5px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #2563eb;
+    background: #9ca3af;
 }
 </style>
