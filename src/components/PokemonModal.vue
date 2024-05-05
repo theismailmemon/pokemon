@@ -3,7 +3,7 @@
     <transition name="modal-fade" appear>
       <div v-if="isModalOpen" class="fixed inset-0 z-50 flex items-center justify-end bg-black bg-opacity-50"
         @click="$emit('closeModal')">
-        <div class="bg-blue-950 sm:max-w-[440px] w-full sm:ml-0 ml-10 h-full" @click.stop>
+        <div class="bg-blue-950 sm:max-w-[450px] w-full sm:ml-0 ml-10 h-full" @click.stop>
           <div class="h-[50%] px-5">
             <div class="flex items-center justify-between pt-10">
               <h2 class="text-white text-3xl font-medium">{{ pokemonDeatil.name }}</h2>
