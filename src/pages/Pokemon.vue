@@ -164,7 +164,7 @@ export default {
 
 <template>
   <div>
-    <div class="sm:mx-auto sm:container sm:my-24 my-5 sm:px-1 px-4">
+    <div class="sm:mx-auto sm:container sm:my-24 my-5 sm:px-5 px-4">
       <h1 class="text-3xl font-medium text-blue-950 text-center">Pokedex</h1>
       <div class="mt-6 grid grid-cols-2 gap-2 sm:flex-wrap sm:gap-4 sm:flex sm:justify-center">
         <div class="bg-blue-950 shadow cursor-pointer sm:w-60 w-full rounded-lg sm:pt-16 pt-10 pb-6 px-2" @click="handleIsModalOpen(item)"

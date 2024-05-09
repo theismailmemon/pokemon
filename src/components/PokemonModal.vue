@@ -2,8 +2,8 @@
   <div>
     <transition name="modal-fade" appear>
       <div v-if="isModalOpen" class="fixed inset-0 z-50 flex items-center justify-end bg-black bg-opacity-50"
-        @click="$emit('closeModal')">
-        <div class="bg-blue-950 sm:max-w-[450px] w-full sm:ml-0 ml-10 h-full" @click.stop>
+        @click="$emit('closeModal')" @touchstart="handleTouchStart" @touchend="handleTouchEnd">
+        <div class="bg-blue-950 sm:max-w-[450px] w-full sm:ml-0 ml-16 h-full" @click.stop>
           <div class="h-[50%] px-5">
             <div class="flex items-center justify-between pt-10">
               <h2 class="text-white text-3xl font-medium">{{ pokemonDeatil.name }}</h2>
@@ -23,18 +23,17 @@
           <div class="bg-white rounded-t-3xl h-[50%] px-5 pt-10">
             <div class="max-w-48">
               <h1 class="flex justify-between mt-4 text-lg">
-                <span class="text-blue-950 font-semibold">Experince:</span>
-                <span class="text-blue-900 font-semibold">64 EX</span>
+                <span class="text-blue-950 font-semibold">Experience:</span>
+                <span class="text-blue-900 font-semibold">64 EXP</span>
               </h1>
               <h1 class="flex justify-between mt-4 text-lg">
-                <span class="text-blue-950 font-semibold">Hieght:</span>
+                <span class="text-blue-950 font-semibold">Height:</span>
                 <span class="text-blue-900 font-semibold">7 m</span>
               </h1>
               <h1 class="flex justify-between mt-4 text-lg">
                 <span class="text-blue-950 font-semibold">Weight:</span>
                 <span class="text-blue-900 font-semibold">69 Kg</span>
               </h1>
-
             </div>
           </div>
         </div>
@@ -49,10 +48,23 @@ export default {
     pokemonDeatil: Object,
     isModalOpen: Boolean,
   },
-  data() {
-    return {};
+  methods: {
+    handleTouchStart(event) {
+      this.touchStartX = event.touches[0].clientX;
+    },
+    handleTouchEnd(event) {
+      const touchEndX = event.changedTouches[0].clientX;
+      if (touchEndX - this.touchStartX > 50) {
+        // If the touch ended with a left swipe (positive difference in X coordinates)
+        this.$emit('closeModal');
+      }
+    },
   },
-  methods: {},
+  data() {
+    return {
+      touchStartX: 0,
+    };
+  },
 };
 </script>
 
