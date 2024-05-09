@@ -23,11 +23,11 @@
           </div>
           <div class="bg-white rounded-t-3xl h-[50%] px-5 pt-10">
             <div class="max-w-48">
-              <h1 class="flex justify-between mt-4 sm:text-lg">
+              <h1 class="flex justify-between mt-4 text-lg">
                 <span class="text-blue-950 font-semibold">Experience:</span>
                 <span class="text-blue-900 font-semibold">64 EXP</span>
               </h1>
-              <h1 class="flex justify-between mt-4 sm:text-lg">
+              <h1 class="flex justify-between mt-4 text-lg">
                 <span class="text-blue-950 font-semibold">Height:</span>
                 <span class="text-blue-900 font-semibold">7 m</span>
               </h1>
