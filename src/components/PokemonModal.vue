@@ -2,7 +2,8 @@
   <div>
     <transition name="modal-fade" appear>
       <div v-if="isModalOpen" class="fixed inset-0 z-50 flex items-center justify-end bg-black bg-opacity-50"
-        @click="$emit('closeModal')" @touchstart="handleTouchStart" @touchend="handleTouchEnd">
+        @click="$emit('closeModal')" @touchstart="handleTouchStart" @touchmove="handleTouchMove"
+        @touchend="handleTouchEnd">
         <div class="bg-blue-950 sm:max-w-[450px] w-full sm:ml-0 ml-16 h-full" @click.stop>
           <div class="h-[50%] px-5">
             <div class="flex items-center justify-between pt-10">
@@ -37,6 +38,18 @@
             </div>
           </div>
         </div>
+        <div v-if="showSwipeIndicator" class="absolute top-0 left-0 flex items-center h-full text-white">
+          <div class="w-12 h-full flex items-center justify-center bg-blue-900">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="24"
+              height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M5 12l14 0" />
+              <path d="M13 18l6 -6" />
+              <path d="M13 6l6 6" />
+            </svg>
+          </div>
+        </div>
       </div>
     </transition>
   </div>
@@ -48,9 +61,23 @@ export default {
     pokemonDeatil: Object,
     isModalOpen: Boolean,
   },
+  data() {
+    return {
+      touchStartX: 0,
+      showSwipeIndicator: false,
+    };
+  },
   methods: {
     handleTouchStart(event) {
       this.touchStartX = event.touches[0].clientX;
+      this.showSwipeIndicator = true; // Show swipe indicator when touch starts
+    },
+    handleTouchMove(event) {
+      const touchMoveX = event.touches[0].clientX;
+      if (touchMoveX - this.touchStartX > 50) {
+        // If sliding right, hide swipe indicator
+        this.showSwipeIndicator = false;
+      }
     },
     handleTouchEnd(event) {
       const touchEndX = event.changedTouches[0].clientX;
@@ -58,12 +85,8 @@ export default {
         // If the touch ended with a left swipe (positive difference in X coordinates)
         this.$emit('closeModal');
       }
+      this.showSwipeIndicator = false; // Hide swipe indicator when touch ends
     },
-  },
-  data() {
-    return {
-      touchStartX: 0,
-    };
   },
 };
 </script>
