@@ -4,10 +4,10 @@
       <div v-if="isModalOpen" class="fixed inset-0 z-50 flex items-center justify-end bg-black bg-opacity-50"
         @click="$emit('closeModal')" @touchstart="handleTouchStart" @touchmove="handleTouchMove"
         @touchend="handleTouchEnd">
-        <div class="bg-blue-950 sm:max-w-[450px] w-full sm:ml-0 ml-14 h-full" @click.stop>
+        <div class="bg-blue-950 sm:max-w-[450px] w-full sm:ml-0 ml-12 h-full" @click.stop>
           <div class="h-[50%] px-5">
             <div class="flex items-center justify-between pt-10">
-              <h2 class="text-white sm:text-3xl text-2xl font-medium">{{ pokemonDeatil.name }}</h2>
+              <h2 class="text-white sm:text-3xl text-[26px] font-medium">{{ pokemonDeatil.name }}</h2>
               <h2 class="text-white"># <span v-if="pokemonDeatil.id <= 9">0</span><span>{{ pokemonDeatil.id }}</span>
               </h2>
             </div>
@@ -23,15 +23,15 @@
           </div>
           <div class="bg-white rounded-t-3xl h-[50%] px-5 pt-10">
             <div class="max-w-48">
-              <h1 class="flex justify-between mt-4 sm:text-lg">
+              <h1 class="flex justify-between sm:mt-4 mt-3 text-[17px] sm:text-lg">
                 <span class="text-blue-950 font-semibold">Experience:</span>
                 <span class="text-blue-900 font-semibold">64 EXP</span>
               </h1>
-              <h1 class="flex justify-between mt-4 sm:text-lg">
+              <h1 class="flex justify-between sm:mt-4 mt-3 text-[17px] sm:text-lg">
                 <span class="text-blue-950 font-semibold">Height:</span>
                 <span class="text-blue-900 font-semibold">7 m</span>
               </h1>
-              <h1 class="flex justify-between mt-4 sm:text-lg">
+              <h1 class="flex justify-between sm:mt-4 mt-3 text-[17px] sm:text-lg">
                 <span class="text-blue-950 font-semibold">Weight:</span>
                 <span class="text-blue-900 font-semibold">69 Kg</span>
               </h1>
