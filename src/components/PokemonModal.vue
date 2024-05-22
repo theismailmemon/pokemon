@@ -18,7 +18,7 @@
               </h2>
             </div>
             <div class="flex items-center h-[calc(100%-120px)]">
-              <img :src="pokemonDeatil.imageUrl" alt="" class="w-40 mx-auto">
+              <img :src="pokemonDeatil.imageUrl" alt="" class="sm:w-40 w-36 mx-auto">
             </div>
           </div>
           <div class="bg-white rounded-t-3xl h-[50%] px-5 pt-10">
@@ -38,18 +38,7 @@
             </div>
           </div>
         </div>
-        <div v-if="showSwipeIndicator" class="absolute top-0 left-0 flex items-center h-full text-white">
-          <div class="w-12 h-full flex items-center justify-center bg-blue-900">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-right" width="24"
-              height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round"
-              stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M5 12l14 0" />
-              <path d="M13 18l6 -6" />
-              <path d="M13 6l6 6" />
-            </svg>
-          </div>
-        </div>
+       
       </div>
     </transition>
   </div>
@@ -64,19 +53,19 @@ export default {
   data() {
     return {
       touchStartX: 0,
-      showSwipeIndicator: false,
+    
     };
   },
   methods: {
     handleTouchStart(event) {
       this.touchStartX = event.touches[0].clientX;
-      this.showSwipeIndicator = true; // Show swipe indicator when touch starts
+    
     },
     handleTouchMove(event) {
       const touchMoveX = event.touches[0].clientX;
       if (touchMoveX - this.touchStartX > 50) {
         // If sliding right, hide swipe indicator
-        this.showSwipeIndicator = false;
+       
       }
     },
     handleTouchEnd(event) {
@@ -85,7 +74,7 @@ export default {
         // If the touch ended with a left swipe (positive difference in X coordinates)
         this.$emit('closeModal');
       }
-      this.showSwipeIndicator = false; // Hide swipe indicator when touch ends
+     
     },
   },
 };
